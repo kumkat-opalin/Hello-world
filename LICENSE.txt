@@ -1,0 +1,143 @@
+5. Protéger vos programmes par la GNU GPL
+Voici les étapes pratiques nécessaires pour protéger vos programmes par la GNU GPL.
+
+Pour appliquer une licence à un programme, vous devez détenir le copyright sur le programme. Ainsi, la première chose à faire est de mettre un copyright sur votre code source. Ensuite, vous pouvez décider de la licence sous laquelle votre programme sera distribué. Le choix de la licence impliquera les droits dont disposeront les personnes qui utiliseront votre programme.
+
+Pour mémoire, dans le cadre du projet GNU la notion de copyleft est utilisée pour protéger légalement le logiciel libre pour tout le monde.
+
+Pour mettre un logiciel sous copyleft il faut deux étapes:
+
+mettre un copyright sur le logiciel
+ajouter des conditions de distribution, outil légal qui donne à chacun le droit d'utiliser, de modifier et de redistriber le code du programme.
+Le copyleft est un terme général. Les conditions de distributions spécifiques utilisées dans le cadre du projet GNU sont contenues dans la GNU GPL.
+
+On dépose donc un copyright ordinaire, mais assorti d'une licence d'exploitation très spéciale qui donne à tout utilisateur des droits illimités de recopie, de redistribution et d'accès au code source. Ces droits sont étendus automatiquement aux versions modifiées utilisant tout ou partie d'un logiciel GNU et aux utilisateurs futurs.
+
+5.1 Etapes pratiques
+D'un point de vue pratique, insérez les indications suivantes dans votre programme. Il est préférable de les faire figurer au début de chaque fichier source. Au minimum, chaque module source devra comporter la ligne de copyright et indiquer où se trouvent toutes les autres indications :
+
+
+    une ligne pour donner le nom du programme et ce qu'il est censé faire.
+    Copyright (C) 19yy  <nom de l'auteur>
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; see the file COPYING. If not, write to the
+    Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+ou en français, si vous préférez :
+
+    une ligne pour donner le nom du programme et ce qu'il est censé faire.
+    Copyright (C) 19yy  <nom de l'auteur>
+
+    Ce programme est un logiciel libre: vous pouvez le redistribuer
+    et/ou le modifier selon les termes de la "GNU General Public
+    License", tels que publiés par la "Free Software Foundation"; soit
+    la version 2 de cette licence ou (à votre choix) toute version
+    ultérieure.
+
+    Ce programme est distribué dans l'espoir qu'il sera utile, mais
+    SANS AUCUNE GARANTIE, ni explicite ni implicite; sans même les
+    garanties de commercialisation ou d'adaptation dans un but spécifique.
+
+    Se référer à la "GNU General Public License" pour plus de détails.
+
+    Vous devriez avoir reçu une copie de la "GNU General Public License"
+    en même temps que ce programme; sinon, écrivez a la "Free Software
+    Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA".
+Vous pouvez également ajouter les informations nécessaires pour vous contacter par courrier électronique, ainsi qu'éventuellement votre adresse postale.
+
+Prenons comme exemple le source du programme othello.c :
+
+/*
+    name : othello.c
+
+    othello -- the popular game of othello
+
+    Copyright (C) 1992  Frederic Couchet
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; see the file COPYING . If not, write to the
+    Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
+
+    Please send bugreports with examples or suggestions to
+mad@bocal.cs.univ-paris8.fr
+*/
+De plus, si votre programme est interactif, faites-lui afficher un court avertissement comme celui-ci à son lancement :
+
+    Gnomovision version 69, Copyright (C) 19yy name of author
+    Gnomovision comes with ABSOLUTELY NO WARRANTY; for details type `show
+    w'.
+    This is free software, and you are welcome to redistribute it
+    under certain conditions; type `show c' for details.
+Les commandes hypothétiques 'w' et 'c' doivent afficher les parties appropriées de la licence.
+
+En français, si vous préférez :
+
+    Nom_du_programme version 69, Copyright (C) 19yy nom de l'auteur
+
+    Nom_du_programme est fourni sans AUCUNE GARANTIE ; pour plus de détails
+     tapez `w'.
+
+    Ce programme est libre, et vous êtes encouragés à le redistribuer sous
+    certaines conditions ; tapez `c' pour les détails.
+Exemple dans le cas du programme othello :
+
+Othello version 2.1, Copyright (C) 1992 Frederic Couchet
+Othello comes with ABSOLUTELY NO WARRANTY
+This is a free software, and you are welcome to distribute it,
+under certain conditions. See the file COPYING for details.
+Exemple dans le cas du programme Gnu make :
+
+GNU Make version 3.74, by Richard Stallman and Roland McGrath.
+Copyright (C) 1988, 89, 90, 91, 92, 93, 94, 95 Free Software Foundation,
+Inc. This is free software; see the source for copying conditions.
+There is NO warranty; not even for MERCHANTABILITY or FITNESS FOR A
+PARTICULAR PURPOSE.
+Vous devez joindre à votre programme la GNU GPL, sous la forme d'un fichier généralement nommé COPYING. Vous pouvez trouver ce fichier dans n'importe quelle archive d'un logiciel GNU.
+
+N'oubliez pas, si vous travaillez dans une société ou pour une université, de faire signer une décharge de renoncement à ses droits à votre employeur. En effet, par défaut, le code que vous écrivez lui appartient.
+
+<nom de l'employeur>, declare par la presente ne pas reclamer de
+copyright sur le programme "Gnomovision" ecrit par Marcel Gnou.
+
+signature de Monsieur le responsable, date
+La GPL ne s'applique pas uniquement à des programmes. En effet, en la lisant on peut noter qu'elle s'applique "to any program or other work which contains a notice placed by the copyright holder saying it may be distributed under the terms of this General Public License". De même, quand la GPL fait référence au code source, c'est par ces termes "The source code for a work means the preferred form of the work for making modifications to it". Nous pouvons donc appliquer la GPL à tout type de travail (documentation, musique ...).
+
+Dans le cadre d'une documentation, la notice à insérer pourrait être la suivante (c'est une version très légèrement modifiée de la version originale):
+
+    une ligne pour donner le nom du document et une brève idée de ce
+    que c'est
+    Copyright (C) 19yy  <nom de l'auteur>
+
+    This document is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This work is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this work; see the file COPYING. If not, write to the
+    Free Software Foundation, Inc., 675 Mass Ave, Cambridge, MA 02139, USA.
